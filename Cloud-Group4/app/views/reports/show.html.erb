@@ -1,0 +1,9 @@
+<h3> Displaying the report </h3>
+
+<p> Report name:  <%= @report.name %> </p>
+<p> Bugs found: <%= @report.bug_count %> </p>
+<p> Test Result: </p>
+<p><%= link_to "download report", @report.test_result_url %> </p>
+
+<br> <%= link_to "edit", edit_report_path(@report) %> |
+<%= link_to "delete", report_path(@report), method: :delete, data: {confirm: "Are you sure?"} %>

@@ -1,0 +1,15 @@
+<h3> Task details </h3>
+<%= link_to "Download Project", @task.project_apk_url %>
+
+<h3> <%= @project.name %> </h3>
+
+<p> <%= @project.status %> | <%= @project.start_date %> | <%= @project.client.try(:name)%> </p>
+
+<h3> Assigned to following users </h3>
+
+<ul>
+		<% for user in @task.users %>
+		<li > <%= user.email %>
+		</li>
+		<%end%>
+	</ul>

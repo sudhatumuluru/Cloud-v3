@@ -1,0 +1,26 @@
+<h3> Editing the profile </h3>
+
+<%= form_for @profile do |f| %>
+
+	<% if @profile.errors.any? %>
+	<div class='error' style="color:red">
+		<ul>
+			<% for msg in @profile.errors.full_messages %> 
+			<li><%= msg %> </li>
+			<%end%>
+		</ul>
+	</div>
+	<% end %>
+	<label>First Name: </label><br/>
+	<%= f.text_field :first_name%><br/>
+	
+	<label>Last Name: </label><br/>
+	<%= f.text_field :last_name %><br/>
+	
+	<label>Bio-Data: </label><br/>
+	<%= f.text_area :bio, rows: 10 %><br/>
+
+
+	<%= f.submit %> 
+	
+<% end %>

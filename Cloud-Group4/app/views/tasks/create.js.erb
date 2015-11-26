@@ -1,0 +1,16 @@
+$('#count').text('<%= @project.tasks.size %>');
+<% if !@overdue_task.blank? %>
+	$('#count1').text('<%= @overdue_tasks.size %>');
+	$('#overdue_lists').append('<li id="li_<%= @overdue_task.id%>"> <%= @overdue_task.name %> <small><%= link_to "edit", edit_project_task_path(@project, @overdue_task), remote: true %></small></li>');
+<% end %>
+<% if !@incomplete_task.blank? %>
+	$('#count2').text('<%= @incomplete_tasks.size %>');
+	$('#incomplete_lists').append('<li id="li_<%=@incomplete_task.id%>"> <%= @incomplete_task.name %> <small> <%= link_to "edit", edit_project_task_path(@project, @incomplete_task), remote: true %> <%= link_to "mark as complete", tasks_mark_as_complete_path(task_id: @incomplete_task.id), remote: true %></small></li>');
+<% end %>
+<% if !@complete_task.blank? %>
+	$('#count3').text('<%= @complete_tasks.size %>');
+	$('#complete_lists').append('<li id="li_<%=@complete_task.id%>"> <%= @complete_task.name %> <small> <%= link_to "edit", edit_project_task_path(@project, @complete_task), remote: true %> <%= link_to "mark as incomplete", tasks_mark_as_incomplete_path(task_id: @complete_task.id), remote: true %></small></li>');
+<% end %>
+$('#new_task').hide();
+$('#add_task').show();
+alert(<%= 123 %>)

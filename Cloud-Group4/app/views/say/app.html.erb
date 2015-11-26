@@ -1,0 +1,56 @@
+
+<p> The total  clients count is <%= @clients.size%> </p>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Name</th>
+			<th>Company</th>
+			<th>Email</th>
+			<th>Website</th>
+			<th>Projects</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @clients.each_with_index do |client,index| %>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= client.name %></td>
+			<td><%= client.company %></td>
+			<td><%= client.email %></td>
+			<td><%= client.website %></td>
+			<td><%= client.projects.count %></td>
+		</tr>
+		<% end %>	
+	</tbody>
+	
+</table>
+			
+<p> The total  projects count is <%= @projects.size%> </p>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Start Date</th>
+			<th>Description</th>
+			<th>Tasks</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @projects.each_with_index do |project,index| %>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= project.name %></td>
+			<td><%= project.status %></td>
+			<td><%= project.start_date %></td>
+			<td><%= project.description %></td>
+			<td><%= project.tasks.count %></td>
+		</tr>
+		<% end %>	
+	</tbody>
+	
+</table>

@@ -1,0 +1,16 @@
+<h3> <%= @category.name %> </h3>
+
+<p> Projects- <%= @category.projects.size %> </p>
+
+<br> <%= link_to "edit", edit_category_path(@category) %> |
+<%= link_to "delete", category_path(@category), method: :delete, data: {confirm: "Are you sure?"} %>
+
+
+
+<ul>
+	<% for project in @category.projects %>
+	<li> <%= project.name %>
+	<%end%>
+</ul>
+
+<%= link_to "Back to list" , categories_path %>

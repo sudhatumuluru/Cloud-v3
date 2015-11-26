@@ -1,0 +1,36 @@
+<h1><%= @message %></h1>
+<%= 5%2 %>
+<% temp = 35 %>
+<% if temp > 30 %>
+	<p> Time for swim </p>
+<% end %>
+
+<% for name in @names %>
+<p> <%= name%> </p>
+<% end%>	
+
+<a href= "/say/goodbye">Say Bye </a> <br/>
+<%= link_to "Say Goodbye (Ruby)", "/say/goodbye" %> <br/>
+<%= link_to "Say Goodbye (Ruby)", say_goodbye_path %> <br/>
+
+
+<input type="text" name="number" id="number"><br/>
+<span id="numberError"></span> <br/>
+<input type="submit" value="click me" id="submit" onclick="clicked()"><br/>
+
+
+<script type="text/javascript">
+
+function clicked(){
+	var number = document.getElementById('number').value;
+	var numberError = document.getElementById('numberError');
+	if (number == "") {
+		numberError.innerHTML = "You must enter a number";
+	}
+	else {
+		alert(number);
+	}
+}
+
+</script>
+

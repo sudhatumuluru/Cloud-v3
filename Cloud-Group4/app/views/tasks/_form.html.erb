@@ -1,0 +1,18 @@
+<%= form_for [@project, @task], remote: true  do |f| %>
+
+	
+	<%= f.text_field :name, placeholder: "enter name" , required: true%> <br/>
+	
+	<%= f.date_select :due_date, placeholder: "Enter due date" , required: true %><br/>
+	
+	<%= f.hidden_field :project_id, value: @project.id %>
+	
+	<label>is_completed: </label><br/>
+	<%= f.check_box :is_completed%><br/> <br/>
+
+	<label>Project Apk File: </label><br/>
+	 <%= f.file_field :project_apk %>
+
+	<%= f.submit %>
+
+<% end %>

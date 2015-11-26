@@ -1,0 +1,39 @@
+<h3> Listing Clients </h3>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Name</th>
+			<th>Company</th>
+			<th>Email</th>
+			<th>Website</th>
+			<th>Projects</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @clients.each_with_index do |client,index| %>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= link_to client.name, client_path(client) %></td>
+			<td><%= client.company %></td>
+			<td><%= client.email %></td>
+			<td><%= client.website %></td>
+			<td><%= client.projects.count %></td>
+		</tr>
+		<% end %>	
+	</tbody>
+</table>
+
+<% if can? :create, Client.new %>
+<br> <%= link_to "Add Client", new_client_path %> <br/>
+<% end %>
+
+
+<% data= {} %>
+<% ordered_clients = [] %>
+
+<% for client in (@clients.sort_by {|client| client.projects.size}).reverse.first(10) %>
+<% data[:"#{client.name}"] = client.projects.size%>
+<% end %>
+ <%= column_chart(data) %>

@@ -1,0 +1,26 @@
+<h3> Listing reports </h3>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Name</th>
+			<th>User ID</th>
+			<th>Bug Count</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<% @reports.each_with_index do |report,index| %>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= link_to report.name, report_path(report)%></td>
+			<td><%= report.user.profile.first_name %></td>
+			<td><%= report.bug_count %></td>
+			
+		</tr>
+		<% end %>	
+	</tbody>
+</table>
+
+<br> <%= link_to "Add Report", new_report_path %> <br/>

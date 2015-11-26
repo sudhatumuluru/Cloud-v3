@@ -1,0 +1,4 @@
+$('#count2').text('<%= @incomplete_tasks.size %>');
+$('#incomplete_lists').append('<li id="li_<%=@task.id%>"> <%= @task.name %> <small> <%= link_to "edit", edit_project_task_path(@project, @task), remote: true %> <%= link_to "mark as complete", tasks_mark_as_complete_path(task_id: @task.id), remote: true %></small></li>');
+$('#count3').text('<%= @complete_tasks.size %>');
+$('#li_<%=@task.id%>').remove();

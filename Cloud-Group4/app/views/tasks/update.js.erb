@@ -1,0 +1,4 @@
+$('#li_<%= @task.id %>').html('<%= @task.name %> <small> <%= link_to "edit", edit_project_task_path(@project, @task), remote: true %> <%= link_to "mark as incomplete", tasks_mark_as_incomplete_path(task_id: @task.id), remote: true %></small>');
+$('#edit_task_<%= @task.id %>').hide();
+$('#add_task').show();
+

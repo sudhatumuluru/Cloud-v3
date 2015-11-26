@@ -1,0 +1,38 @@
+<h3> Listing Projects </h3>
+<%= link_to "Export", projects_path(format: "xls") %>
+
+<table border="1">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Description</th>
+			<th>Client_id</th>
+			<th>Code</th>
+			<th>Start_date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @projects.each_with_index do |project,index| %>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= link_to project.name, project_path(project)%></td>
+			<td><%= project.status %></td>
+			<td><%= project.description %></td>
+			<td><%= project.client.try(:name) %></td>
+			<td><%= project.code %></td>
+			<td><%= project.start_date %> </td>
+		</tr>
+		<% end %>	
+	</tbody>
+</table>
+
+
+<br> <%= link_to "Add Project", new_project_path %> <br/>
+
+
+
+
+
+ 

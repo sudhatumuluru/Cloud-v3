@@ -1,0 +1,4 @@
+<p> Dear <%= @task.project.client.name %>, </p>
+<p> <%= @task.name %> belonging to <%= @task.project.name %> which is due on <%= @task.due_date %> has been completed </p>
+regards, <br/>
+<%= @task.project.user.email %>

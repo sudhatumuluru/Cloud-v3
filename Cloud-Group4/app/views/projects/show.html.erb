@@ -1,0 +1,62 @@
+<h3> <%= @project.name %> </h3>
+
+<p> <%= @project.status %> | <%= @project.start_date %> | <%= @project.client.try(:name)%> </p>
+
+<br> <%= link_to "edit", edit_project_path(@project) %> |
+<%= link_to "delete", project_path(@project), method: :delete, data: {confirm: "Are you sure?"} %>
+
+<h3>Tasks : <span id="count" > <%= @project.tasks.size %> </span> </h3>
+
+
+<h3>Total overdue tasks : <span id="count1" > <%= @overdue_tasks.size %> </span> </h3>
+
+	<ul id="overdue_lists">
+		<% for overdue_task in @overdue_tasks %>
+		<li id="li_<%=overdue_task.id%>"> <%= overdue_task.name %>
+		<small> 
+			<%= link_to "edit", edit_project_task_path(@project, overdue_task), remote: true %>
+		</small>
+		</li>
+		<%end%>
+	</ul>
+
+<h3>Total incomplete tasks : <span id="count2" > <%= @incomplete_tasks.size %> </span> </h3>
+
+	<ul id="incomplete_lists">
+		<% for incomplete_task in @incomplete_tasks %>
+		<li id="li_<%=incomplete_task.id%>"> <%= incomplete_task.name %>
+		<small> 
+			<%= link_to "edit", edit_project_task_path(@project, incomplete_task), remote: true %>
+			<%= link_to "mark as complete", tasks_mark_as_complete_path(task_id: incomplete_task.id), remote: true %>
+		</small>
+		</li>
+		<%end%>
+	</ul>
+
+<h3>Total complete tasks : <span id="count3" > <%= @complete_tasks.size %> </span> </h3>
+
+	<ul id="complete_lists">
+		<% for complete_task in @complete_tasks %>
+		<li id="li_<%=complete_task.id%>"> <%= complete_task.name %>
+		<small> 
+			<%= link_to "edit", edit_project_task_path(@project, complete_task), remote: true %>
+			<%= link_to "mark as incomplete", tasks_mark_as_incomplete_path(task_id: complete_task.id), remote: true %>
+		</small>
+		</li>
+		<%end%>
+	</ul>
+
+
+<br> <%= link_to "Add Task", new_project_task_path(@project), id: "add_task", remote: true %> <br/>
+
+
+
+<br><%= link_to "Back to list" , projects_path %> <br/>
+
+<% @grouped = @project.tasks.all.group(:due_date).count %>
+<%= line_chart @grouped %>
+
+
+
+
+

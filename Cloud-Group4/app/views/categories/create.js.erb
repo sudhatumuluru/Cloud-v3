@@ -1,0 +1,4 @@
+$('#count').text('<%= current_user.categories.size %>');
+$('#lists').append('<li id="li_<%= @category.id %>"><%= @category.name %> <%= link_to "edit", edit_category_path(@category), remote: true %> <%= link_to "x", category_path(@category), method: :delete, data:{confirm: "are you sure?"}, remote: true %></li>');
+$('#new_category').hide();
+$('#add_category').show();

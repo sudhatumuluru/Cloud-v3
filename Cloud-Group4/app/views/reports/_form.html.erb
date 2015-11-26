@@ -1,0 +1,24 @@
+<%= form_for @report do |f| %>
+
+	<% if @report.errors.any? %>
+	<div class='error' style="color:red">
+		<ul>
+			<% for msg in @report.errors.full_messages %> 
+			<li><%= msg %> </li>
+			<%end%>
+		</ul>
+	</div>
+	<% end %>
+	<label>Name: </label><br/>
+	<%= f.text_field :name%><br/>
+
+	<label>Bug Count: </label><br/>
+	<%= f.number_field :bug_count%><br/>
+
+	<label>Test Result: </label><br/>
+	 <%= f.file_field :test_result %>
+
+	<%= f.submit %> 
+	
+<% end %>
+	

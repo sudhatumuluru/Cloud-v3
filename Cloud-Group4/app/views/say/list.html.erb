@@ -1,0 +1,45 @@
+<h3> Listing Clients </h3>
+<ol>
+	<% @clients.each do |client| %>
+	<li> <%= client.name %> (<%= client.projects.size %>)</li>
+	<ul>
+		<% if client.projects.empty?%>
+		<p> No records found </p>
+		<% else %>
+			<% client.projects.each do |project|%>
+			<li> <%= project.name %>
+			<%= project.start_date > Date.today ? "starting on " : "started on" %>
+			<%= project.start_date.strftime("%A, %d %B %Y") %></li>
+			<ul>
+				<em> (<%= project.categories.pluck(:name).join(", ") %>) </em>
+				<% if project.tasks.empty? %>
+					<p> No tasks found </p>
+				<% else %>
+					<h4> Completed tasks </h4>
+					<% completed_tasks = project.tasks.where('is_completed = ?', true) %>
+					<% if completed_tasks.empty? %>
+						<p> No tasks found </p>
+					<% else %>
+				 		<% completed_tasks.each do |task| %>
+							<li> <%= task.name %> ~ <small><%= time_ago_in_words(task.due_date) %> ago </small></li>
+						<% end %>
+					<% end %>
+				
+					<h4> Ongoing tasks </h4>
+					<% project.tasks.where('is_completed = ? AND due_date >= ?', false , Date.today).each do |task| %>
+						<li> <%= task.name %> </li>
+					<% end %>
+				
+					<h4> Overdue tasks </h4>
+					<% project.tasks.where('is_completed = ? AND due_date < ?', false , Date.today).each do |task| %>
+						<li> <%= task.name %> </li>
+					<% end %>
+				
+				<% end %>
+			</ul>
+			<% end %>
+		<% end %>
+	</ul>
+	<% end %>
+</ol>
+	

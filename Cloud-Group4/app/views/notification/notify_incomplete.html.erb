@@ -1,0 +1,4 @@
+<p> Dear <%= @task.project.client.name %>, </p>
+<p> <%= @task.name %> belonging to <%= @task.project.name %> has been reopened </p>
+regards, <br/>
+<%= @task.project.user.email %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pmtool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if user_signed_in? %>
+	Welcome <%= current_user.email %> <%= current_user.roles.pluck(:name).join(",") %> | 
+	<% if current_user.profile.nil? %>
+		<%= link_to "Add Profile", new_profile_path %>
+	<% else %> 
+		<%= link_to "View Profile", profile_path(Profile.find_by_user_id(current_user.id).id) %> 
+	<% end %>
+
+	| <%= link_to "Acoount Setting", edit_user_registration_path %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+	<br/>
+
+	<%= link_to "Clients", clients_path %> | <%= link_to "Projects", projects_path %> | <%= link_to "Categories", categories_path %> |<%= link_to "Tasks", tasks_path %> |
+	<%= link_to "Reports", reports_path %>
+
+	<% if can? :create , @profile %>
+	<br> <%= link_to "Create Profile", new_user_registration_path %> 
+	<% end %>
+<%else%>
+	<%= link_to "Login", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %>
+<%end %>
+
+
+
+<%= notice %>
+<%= alert %>
+<%= yield %>
+
+</body>
+</html>
