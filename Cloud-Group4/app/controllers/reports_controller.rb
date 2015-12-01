@@ -7,8 +7,9 @@ class ReportsController < ApplicationController
     end
   end
   def show
-    @report = current_user.reports.find(params[:id])
-  end
+ #   @report = current_user.reports.find(params[:id])
+@report = current_user.is_admin? ? Report.all.find(params[:id]) : current_user.reports.find(params[:id]) 
+ end
   def new
     @report = Report.new
     # @report = @report.build

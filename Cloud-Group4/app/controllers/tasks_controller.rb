@@ -45,7 +45,10 @@ class TasksController < ApplicationController
 		@task.save
 		@project = Project.find(params[:project_id])
 		@task.project_id = @project.id
-		@task.users = User.all.shuffle.first(3)
+@rem_users = User.where('id != ?', current_user.id)
+#	@rem_users = User.all :conditions => (current_user ? ["id != ?", current_user.id] : [])
+ 		@task.users = @rem_users.shuffle.first(3)
+	#	@task.users = User.all.shuffle.first(3)
 		@overdue_tasks = @project.tasks.where('is_completed= ? AND due_date < ?', false,Date.today)
     	@incomplete_tasks = @project.tasks.where('is_completed= ? AND due_date >= ?', false,Date.today)
     	@complete_tasks = @project.tasks.where('is_completed= ?', true)

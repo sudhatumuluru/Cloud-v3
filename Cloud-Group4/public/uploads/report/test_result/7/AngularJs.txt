@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+	{{1+3}}
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+	{{ true == 0 }}
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+	{{ [1,2,3,400].length }}
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+	{{ {x:1,y:2}.x }}
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	Name: <input type="text" ng-model="name"> {{name}}
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	Name: <input type="text" ng-model="name"> {{name.length}}
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	Name: <input type="text" ng-model="name"> {{name.length}}
+	<p>{{ name }}</p>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	Name: <input type="text" ng-model="name">
+	Name: <input type="text" ng-model="name">
+	<textarea ng-model="name"></textarea>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	<input type="checkbox" ng-model="checked">
+	<p ng-hide="checked">Pratibha Revankar</p>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	<input type="checkbox" ng-model="checked">
+	<p ng-hide="checked">Pratibha Revankar</p>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body>
+<div>
+	<input type="checkbox" ng-model="checked">
+	<p ng-show="checked">Pratibha Revankar</p>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div>
+	<input type="text" ng-model="name">
+	<p ng-show="name"> {{name}} </p>
+</div>
+</body>
+</html>
+
+p{
+	border: 1px solid black;
+	
+}
+==========================================================================
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div>
+	<input type="text" ng-model="name">
+	<p ng-hide="!name"> {{name}} </p>
+</div>
+</body>
+</html>
+==========================================================================
+insex.html-
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="mathController">
+	<input type="text" ng-model="value">
+	<h1 ng-show="value">{{ square(value) }}</h1>
+
+</div>
+</body>
+</html>
+
+index.css
+p{
+	border: 1px solid black;
+	
+}
+
+index.js
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("mathController",function($scope){
+	
+	$scope.square = function(value){
+		return value * value;
+	};
+})
+
+
+
+==========================================================================
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("mathController",function($scope){
+	
+	$scope.value=9;
+	$scope.square = function(value){
+		return value * value;
+	};
+})
+
+==========================================================================
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="mathController">
+	<input type="text" ng-model="data.value">
+	<h1 ng-show="data.value">{{ square(data.value) }}</h1>
+
+</div>
+</body>
+</html>
+==========================================================================
+index.js
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha'},{name:'deepa'},{name:'amma'},];
+});
+
+
+index.html
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<ul>
+		<li ng-repeat="entry in collection"> {{entry.name}}</li>
+	</ul>
+
+</div>
+</body>
+</html>
+==========================================================================
+index.js
+
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha'},{name:'deepa'},{name:'amma'}];
+});
+
+
+index.html
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<ul>
+		<li ng-repeat="entry in collection"> {{ $index }} - {{ $first }} - {{ $middle }} - {{ $last }} - {{ $even }} - {{ $odd }} {{entry.name}}</li>
+	</ul>
+
+</div>
+</body>
+</html>
+
+
+==========================================================================
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+
+</head>
+<body>
+<div ng-controller="simpleController">
+	<h1 ng-repeat-start="entry in collection">data</h1>
+		<p>  {{entry.name}}</p>
+	<h2 ng-repeat-end="entry in collection">data end</h2>
+</div>
+</body>
+</html>
+==========================================================================
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+
+</head>
+<body>
+<div ng-init="collection = [{name:'pratibha'},{name:'deepa'},{name:'amma'}]">
+	<ul>
+		<li ng-repeat="entry in collection">  {{entry.name}}</li>
+	</ul>
+</div>
+</body>
+</html>
+==========================================================================
+index.js
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha'},{name:'javascript'},{name:'webtunings'}];
+	
+	$scope.addEntry = function(){
+		$scope.collection.push({name: $scope.newData});
+	};
+});
+
+
+index.html
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+<div ng-controller="simpleController">
+	<ul>
+		<li ng-repeat="entry in collection">  {{entry.name}}</li>
+	</ul>
+	<input type="text" ng-model="newData">
+	<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
+==========================================================================
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<table>
+		<tr ng-repeat="entry in collection">  <td>{{entry.name}}</td></tr>
+	</table>
+
+	<input type="text" ng-model="newData">
+	<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
+
+
+
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha'},{name:'javascript'},{name:'webtunings'}];
+	
+	$scope.addEntry = function(){
+		$scope.collection.push({name: $scope.newData});
+	};
+});
+
+
+p{
+	border: 1px solid black;
+	
+}
+
+table {
+	
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid black;
+	
+}
+
+==========================================================================
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<table>
+		<tr ng-repeat="entry in collection">  <td>{{entry.name}}</td></tr>
+	</table>
+	
+	<p>Total entry = {{ collection.length }}</p>
+
+	<input type="text" ng-model="newData">
+	<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
+
+==========================================================================
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha'},{name:'javascript'},{name:'webtunings'}];
+	
+	$scope.addEntry = function(){
+		$scope.collection.push({name: $scope.newData});
+		$scope.newData = '';
+	};
+});
+
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<table>
+		<tr ng-repeat="entry in collection">  <td>{{entry.name}}</td></tr>
+	</table>
+	
+	<p>Total entry = {{ collection.length }}</p>
+
+	<input type="text" ng-model="newData"> {{ newData }}
+	<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
+==========================================================================
+index.js
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha', age:28, city:'New York'},
+					   {name:'javascript', age:29, city:'New Hamshire'},
+					   {name:'webtunings', age:30, city:'New Yark'},
+					   {name:'deepa', age:26, city:'San Jose'},
+					   {name:'suhas', age:27, city:'Sunnyvale'},
+					   {name:'pratibha', age:28, city:'New York'},
+					   {name:'javascript', age:29, city:'New Hamshire'},
+					   {name:'webtunings', age:30, city:'New Yark'},
+					   {name:'deepa', age:26, city:'San Jose'},
+					   {name:'suhas', age:27, city:'Sunnyvale'}					   
+					   ];
+	
+	$scope.addEntry = function(){
+		$scope.collection.push({name: $scope.newData});
+		$scope.newData = '';
+	};
+});
+
+
+index.html
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>City</th>			
+		</tr>
+		<tr ng-repeat="entry in collection"><td> {{$index + 1}} </td>  <td>{{entry.name}}</td>
+		<td>{{entry.age}}</td>
+		<td>{{entry.city}}</td>		
+		</tr>
+	</table>
+
+	<input type="text" ng-model="newData">
+	<button ng-click="addEntry()">add</button>
+</div>
+</body>
+</html>
+==========================================================================
+index.html
+
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+	<script src="index.js"></script>
+	<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="simpleController">
+	<table>
+		<tr>
+			<th>No</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>City</th>			
+		</tr>
+		<tr ng-repeat="entry in collection"><td> {{$index + 1}} </td>  <td>{{entry.name}}</td>
+		<td>{{entry.age}}</td>
+		<td>{{entry.city}}</td>		
+		</tr>
+	</table>
+	<form ng-submit="addEntry()">
+	Name: <input type="text" ng-model="newData.name" required>
+	Age: <input type="text" ng-model="newData.age" required>
+	City: <input type="text" ng-model="newData.city" required>
+	<input type="submit" value="add">
+	</form>
+</div>
+</body>
+</html>
+
+
+index.js
+
+
+var app = angular.module("simpleApp",[]);
+
+app.controller("simpleController",function($scope){
+	
+	$scope.collection=[{name:'pratibha', age:28, city:'New York'},
+					   {name:'javascript', age:29, city:'New Hamshire'},
+					   {name:'webtunings', age:30, city:'New Yark'},
+					   {name:'deepa', age:26, city:'San Jose'},
+					   {name:'suhas', age:27, city:'Sunnyvale'},
+					   {name:'pratibha', age:28, city:'New York'},
+					   {name:'javascript', age:29, city:'New Hamshire'},
+					   {name:'webtunings', age:30, city:'New Yark'},
+					   {name:'deepa', age:26, city:'San Jose'},
+					   {name:'suhas', age:27, city:'Sunnyvale'}					   
+					   ];
+	
+	$scope.addEntry = function(){
+		$scope.collection.push($scope.newData);
+		$scope.newData = '';
+	};
+});
+
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================

@@ -1,4 +1,26 @@
-<h2>Register with us ?</h2>
+<head>
+<link rel = "stylesheet" href = "register.css">
+</head> 
+<h2>Wanna Register with us ?</h2>
+<body>
+
+ <form>
+        First name:<br>
+        <input type="text" name="firstname">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname">
+        <br>
+        Organisation/Individual:<br>
+        <input type="text" name="organisation">
+        <br>
+        Register as:<br>
+        <input type="radio" name="Tester">Tester
+        <br>
+        <input type="radio" name="Developer">Developer
+        <br>
+        </form>
+<br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -16,14 +38,15 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</body>

@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+	background-color: #FCFBE3;
+	
+}
+a{
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+a:hover{
+	/*color: #7A0600;*/
+	text-decoration: none;
+}
+h1 {
+    text-align: center;
+GROUP4MTAAS
+}

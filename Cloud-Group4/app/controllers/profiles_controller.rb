@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
     if @profile.update_attributes(profile_params)
-      redirect_to projects_path(@profile) 
+      redirect_to profile_path(@profile) 
     else 
       render action: "edit"
     end

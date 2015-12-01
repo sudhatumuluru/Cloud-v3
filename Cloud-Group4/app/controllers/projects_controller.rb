@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
-
+# skip_before_filter :authenticate_user!
 
   
   def index
     @projects =current_user.is_admin? ? Project.all : current_user.projects
-    respond_to do |format|
+#@projects = current_user.projects   
+ respond_to do |format|
       format.html
       format.xls
     end
@@ -26,7 +27,8 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = current_user.projects.find(params[:id])
+    @project =current_user.is_admin? ? Project.all.find(params[:id]) : current_user.projects.find(params[:id])
+   # @project = current_user.projects.find(params[:id])
     @overdue_tasks = @project.tasks.where('is_completed= ? AND due_date < ?', false,Date.today)
     @incomplete_tasks = @project.tasks.where('is_completed= ? AND due_date >= ?', false,Date.today)
     @complete_tasks = @project.tasks.where('is_completed= ?', true)
@@ -38,7 +40,8 @@ class ProjectsController < ApplicationController
   end
   
   def update
-    @project = current_user.projects.find(params[:id])
+@project =current_user.is_admin? ? Project.all.find(params[:id]) : current_user.projects.find(params[:id])
+   # @project = current_user.projects.find(params[:id])
     if @project.update_attributes(project_params)
       redirect_to project_path(@project)
     else 
@@ -47,7 +50,8 @@ class ProjectsController < ApplicationController
   end
   
   def destroy
-    @project = current_user.projects.find(params[:id])
+@project =current_user.is_admin? ? Project.all.find(params[:id]) : current_user.projects.find(params[:id])
+   # @project = current_user.projects.find(params[:id])
     @project.destroy
     redirect_to projects_path
   end

@@ -1,0 +1,1 @@
+select last_name ||' earns '|| TO_CHAR (salary, 'fm$99,999.00') from emp;
